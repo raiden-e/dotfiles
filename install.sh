@@ -33,6 +33,6 @@ done
 ./vscode.sh
 
 # Run the Sublime Script
-./sublime.sh
+# ./sublime.sh
 
 echo "Installation Complete!"

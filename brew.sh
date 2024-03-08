@@ -30,13 +30,10 @@ brew cleanup
 # Define an array of packages to install using Homebrew.
 packages=(
     "python"
-    "bash"
     "zsh"
     "git"
     "tree"
-    "pylint"
-    "black"
-    "node"
+    # "black"
 )
 
 # Loop over the array to install each application.
@@ -68,26 +65,20 @@ $(brew --prefix)/bin/git config --global user.name "$git_user_name"
 $(brew --prefix)/bin/git config --global user.email "$git_user_email"
 
 # Create the tutorial virtual environment I use frequently
-$(brew --prefix)/bin/python3 -m venv "${HOME}/tutorial"
+# $(brew --prefix)/bin/python3 -m venv "${HOME}/tutorial"
 
 # Install Prettier, which I use in both VS Code and Sublime Text
-$(brew --prefix)/bin/npm install --global prettier
+# $(brew --prefix)/bin/npm install --global prettier
 
 # Define an array of applications to install using Homebrew Cask.
 apps=(
-    "google-chrome"
-    "firefox"
     "brave-browser"
-    "sublime-text"
     "visual-studio-code"
-    "virtualbox"
     "spotify"
-    "discord"
-    "google-drive"
-    "gimp"
     "vlc"
     "rectangle"
-    "postman"
+    "utm"
+    "languagetool"
 )
 
 # Loop over the array to install each application.
@@ -102,10 +93,10 @@ done
 
 # Install Source Code Pro Font
 # Tap the Homebrew font cask repository if not already tapped
-brew tap | grep -q "^homebrew/cask-fonts$" || brew tap homebrew/cask-fonts
+# brew tap | grep -q "^homebrew/cask-fonts$" || brew tap homebrew/cask-fonts
 
 # Define the font name
-font_name="font-source-code-pro"
+# font_name="font-source-code-pro"
 
 # Check if the font is already installed
 if brew list --cask | grep -q "^$font_name\$"; then
@@ -127,15 +118,6 @@ brew update
 brew upgrade
 brew upgrade --cask
 brew cleanup
-
-echo "Sign in to Google Chrome. Press enter to continue..."
-read
-
-echo "Sign in to Spotify. Press enter to continue..."
-read
-
-echo "Sign in to Discord. Press enter to continue..."
-read
 
 echo "Open Rectangle and give it necessary permissions. Press enter to continue..."
 read
